@@ -1,0 +1,38 @@
+var: The scope of a variable defined with the keyword “var” is limited to the “function” within which it is defined. If it is defined outside any function, the scope of the variable is global.
+var is “function scoped”.
+
+let: The scope of a variable defined with the keyword “let” or “const” is limited to the “block” defined by curly braces i.e. {} .
+“let” and “const” are“block scoped”.
+
+const: The scope of a variable defined with the keyword “const” is limited to the block defined by curly braces. However if a variable is defined with keyword const, it cannot be reassigned.
+“const” cannot be re-assigned to a new value. However it CAN be mutated.
+
+
+
+
+var greeter = "hey hi";
+    var greeter = "say Hello instead";
+and this also
+
+    var greeter = "hey hi";
+    greeter = "say Hello instead";
+
+
+
+
+
+let greeting = "say Hi";
+    greeting = "say Hello instead";
+this will return an error:
+
+    let greeting = "say Hi";
+    let greeting = "say Hello instead"; // error: Identifier 'greeting' has already been declared
+
+
+
+const greeting = "say Hi";
+    greeting = "say Hello instead";// error: Assignment to constant variable. 
+nor this:
+
+    const greeting = "say Hi";
+    const greeting = "say Hello instead";// error: Identifier 'greeting' has already been declared
