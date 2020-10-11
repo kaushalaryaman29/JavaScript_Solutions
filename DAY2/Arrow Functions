@@ -1,0 +1,16 @@
+An arrow function expression is a compact alternative to a traditional function expression, but is limited and can't be used in all situations.
+
+Code example:
+
+const materials = [
+  'Hydrogen',
+  'Helium',
+  'Lithium',
+  'Beryllium'
+];
+
+console.log(materials.map(material => material.length));
+
+
+
+Expected Output: Array [8, 6, 7, 9]
