@@ -1,0 +1,67 @@
+#include<bits/stdc++.h>
+#include<string.h>
+using namespace std;
+struct trie{
+    public:
+    trie* v[26];
+    bool isword;
+    int freq;
+    trie(){
+        for(int i=0;i<26;i++) v[i]=NULL;
+        isword=false;
+        freq=INT_MIN;
+    }
+};
+
+void ins(trie* t,string s,int cnt)
+{
+    for(int i=0;i<s.length();i++)
+	{
+        if(t->v[s[i]-'a']==NULL){
+            t->v[s[i]-'a']=new trie();
+        }
+        t=t->v[s[i]-'a'];
+    }
+    
+    t->isword=true;
+    t->freq=cnt;
+}
+int search(trie*t,string s){
+    int i;
+    for(i=0;i<s.length();i++){
+        if(t->v[s[i]-'a']==NULL) return 0;
+        t=t->v[s[i]-'a'];
+    }
+    return t->freq;
+}
+int main()
+{
+	ifstream inFile;
+	trie* node=new trie();
+	string x;
+    inFile.open("dict2.txt");
+    if (!inFile) {
+        cout << "Unable to open file";
+        exit(1); // terminate with error
+    }
+    
+    while (inFile >> x) {
+    	string ss="";
+    	int i;
+        for(i=0;i<x.length();i++){
+        	if(x[i]==',') break;
+        	ss+=x[i];
+		}
+		string ss2=x.substr(i+1);
+		int cnt=stoi(ss2);
+		ins(node,ss,cnt);
+    }
+    string s="keyboard";
+    
+    int d=search(node,s);
+    if(d==0 || d==INT_MIN) cout<<"NO"<<endl;
+    else cout<<"YES "<<d<<endl;
+	        
+	inFile.close();
+	return 0;
+}
