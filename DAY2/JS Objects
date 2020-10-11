@@ -1,0 +1,10 @@
+An object is a collection of related data and/or functionality (which usually consists of several variables and functions — which are called properties and methods when they are inside objects.) Let's work through an example to understand what they look like.
+
+For example: A person object can be defines as:
+const Person ={
+      name:'ABC',
+      age:100,
+      gender:'Male'
+}
+
+The object properties can be accessed using dot notation. For example console.log(Person.age) logs 100.
