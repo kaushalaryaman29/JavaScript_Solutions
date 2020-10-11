@@ -1,0 +1,98 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+int main() {
+    int i,j,n1,n2,n3,n4,n5;
+    char unique1[128],unique2[128],unique3[128],unique4[128],unique5[128];
+	char inputString1[128];
+	char inputString2[128];
+    char inputString3[128];
+    char inputString4[128];
+    char inputString5[128];
+	cin >> inputString1 >> inputString2>>inputString3>>inputString4>>inputString5;
+	//cout << inputString1 << inputString2 << inputString3<< inputString4 <<inputString5 << endl;
+	for(i=0;i<strlen(inputString1) ;i++ )
+	{
+	    for(j=0; j<i; j++)
+	    {
+	    if(inputString1[i]!=unique1[j])
+	    {
+	        unique1[j] = inputString1[i];
+	    }
+     	}
+	}
+	n1= strlen(unique1);
+	
+	for(i=0;i<strlen(inputString2) ;i++ )
+	{
+	    for(j=0; j<i; j++)
+	    {
+	    if(inputString2[i]!=unique2[j])
+	    {
+	        unique2[j] = inputString2[i];
+	    }
+     	}
+	}
+	n2= strlen(unique2);
+	
+		for(i=0;i<strlen(inputString3) ;i++ )
+	{
+	    for(j=0; j<i; j++)
+	    {
+	    if(inputString3[i]!=unique3[j])
+	    {
+	        unique3[j] = inputString3[i];
+	    }
+     	}
+	}
+	n3= strlen(unique3);
+	
+		for(i=0;i<strlen(inputString4) ;i++ )
+     	{
+	    for(j=0; j<i; j++)
+	    {
+	    if(inputString4[i]!=unique4[j])
+	    {
+	        unique4[j] =inputString4[i];
+	    }
+     	}
+	}
+	n4= strlen(unique4);
+	
+		for(i=0;i<strlen(inputString5) ;i++ )
+    	{
+	    for(j=0; j<i; j++)
+	    {
+	    if(inputString5[i]!=unique5[j])
+	    {
+	        unique5[j] = inputString5[i];
+	    }
+     	}
+	}
+	n5= strlen(unique5);
+	
+if ((n1>n2) and (n1>n3) and (n1>n4) and (n1>n5))
+{    
+    cout<<inputString1;
+}
+else if ((n2>n1) and (n2>n3) and (n2>n4) and (n2>n5))
+{    
+   cout<<inputString2;
+}
+else if ((n3>n1) and (n3>n2) and (n3>n4) and (n3>n5))
+{    
+  cout<<inputString3;
+}
+else if ((n4>n1) and (n4>n2) and (n4>n3) and (n4>n5))
+{    
+    cout<<inputString4;
+}
+else 
+{
+cout<<inputString5;
+}
+	
+	
+	
+	return 0;
+}
